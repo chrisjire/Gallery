@@ -8,6 +8,15 @@ class Editor(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     email = models.EmailField()
+    
+    def __str__(self):
+        return self.first_name
+    
+    def save_editor(self):
+        self.save()
+    
+    class Meta:
+        ordering = ['first_name']
 
 class tags(models.Model):
     name = models.CharField(max_length= 20)
@@ -35,11 +44,6 @@ class Images(models.Model):
     def get_image(cls):
         images = cls.objects.all()
         return images
-    
-    
-    
-    
-    
     
 class Location(models.Model):
     location = models.CharField(max_length= 20)
