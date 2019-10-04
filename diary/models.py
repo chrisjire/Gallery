@@ -28,6 +28,9 @@ class Images(models.Model):
     def save_Images(self):
         self.save()
         
+    def delete_Images(self):
+        self.delete()
+
     
     
 class Location(models.Model):
