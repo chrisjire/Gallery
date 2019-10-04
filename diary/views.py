@@ -7,5 +7,5 @@ import datetime as dt
 
 # Create your views here.
 def welcome(request):
-    return HttpResponse('Welcome amigos')
+    return render (request, 'index.html')
 
