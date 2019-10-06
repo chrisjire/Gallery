@@ -4,16 +4,16 @@
 {{block.super}}
 <div class="container-fluid">
 
-    <div>
-        <h1>Welcome amigos</h1>
+    <div class="jumbotron" style="text-align: center; font-family: 'Monoton', cursive; font-size: 70px;">
+        <h1>Welcome To My Travel Diary</h1>
     </div>
 
     {% for new_item in new %}
-
+    <div class="jumbotron">
     <div class="row">
 
-        <div class="col-md">
-            <a href="{{new_item.image.url}}" data-lightbox="cool"><img src="{{new_item.image.url}}" class="img-responsive" alt="Image" style="width: 400px; height: 400px;"></a>
+        <div class="col-md-4">
+            <a href="{{new_item.image.url}}"> <img src="{{new_item.image.url}}" class="img-responsive" alt="Image" style="width: 400px; height: 400px;"></a>
         </div>
 
         
@@ -25,6 +25,7 @@
     <div class="row">
         <h2 class="text-center">There No News Items</h2>
     </div>
+</div>
     {% endfor %}
     
 
