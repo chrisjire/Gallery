@@ -13,8 +13,29 @@
     <div class="row">
 
         <div class="col-md-4">
-            <a href="{{new_item.image.url}}"> <img src="{{new_item.image.url}}" class="img-responsive" alt="Image" style="width: 400px; height: 400px;"></a>
+            <img src="{{new_item.image.url}}" class="img-responsive" alt="Image" style="width: 400px; height: 400px;" data-toggle="modal" data-target="#basicExampleModal{{new_item.id}}">
         </div>
+        <div class="modal fade" id="basicExampleModal{{new_item.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{new_item.image_name}}</h5>
+                    <span aria-hidden="true">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <img src="{{new_item.image.url}}" class="img-responsive" alt="Image" style="width: 480px; height: 480px;"">
+                    <hr>
+                    <p>Description: {{new_item.description}}</p>
+                    <p>Editor: {{new_item.editor}}</p>
+                    <p>Time: {{new_item.pub_date}}</p>
+                    <p>Location: {{new_item.image_location}}</p>
+                </div>
+                <div class="modal-footer">
+                </div>
+                </div>
+            </div>
+            </div>
 
         
 

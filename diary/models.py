@@ -49,7 +49,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-class Images(models.Model):
+class Image(models.Model):
     image = models.ImageField(upload_to = 'images/')
     image_name = models.CharField(max_length=50)
     description = models.TextField()
