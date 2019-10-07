@@ -9,12 +9,12 @@
     </div>
 
     {% for new_item in new %}
-    <div class="jumbotron">
     <div class="row">
 
-        <div class="col-md-4">
+        <div class="col-sm-6 col-md-4">
             <img src="{{new_item.image.url}}" class="img-responsive" alt="Image" style="width: 400px; height: 400px;" data-toggle="modal" data-target="#basicExampleModal{{new_item.id}}">
         </div>
+    </div>
         <div class="modal fade" id="basicExampleModal{{new_item.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -39,7 +39,7 @@
 
         
 
-    </div>
+    
     <br>
 
     {% empty %}

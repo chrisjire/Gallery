@@ -14,13 +14,11 @@ def welcome(request):
 def search_results(request):
     
     if 'image' in request.GET and request.GET["image"]:
-        search_term = request.GET.get("images")
-        searched_image_by_category = Images.search_by_category(search_term)
-        searched_image_by_location = Images.search_by_location(search_term)
-        results = [*searched_image_by_category, *searched_image_by_location]
+        search_term = request.GET.get("image")
+        searched_images = Image.search_by_category(search_term)
         message = f"{search_term}"
         
-        return render (request, 'search.html', {"message":message, "results":results})
+        return render (request, 'search.html', {"message":message, "images":searched_images})
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html', {"message":message})

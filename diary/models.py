@@ -57,7 +57,7 @@ class Image(models.Model):
     tags = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(auto_now_add= True)
     image_location = models.ForeignKey(Location)
-    image_category = models.ForeignKey(Category)
+    category = models.ForeignKey(Category)
     
     def save_image(self):
         self.save()
@@ -72,12 +72,7 @@ class Image(models.Model):
     
     @classmethod
     def search_by_category(cls,search_term):
-        new= cls.objects.filter(image_category__name__icontains = search_term)
-        return new
-    
-    @classmethod
-    def search_by_location(cls,search_term):
-        new= cls.objects.filter(image_location__name__icontains = search_term)
+        new= cls.objects.filter(category__name__icontains = search_term)
         return new
     
     class Meta:
